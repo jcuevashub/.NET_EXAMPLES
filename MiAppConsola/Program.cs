@@ -160,12 +160,19 @@ class Program
             // }
 
             //Filtrar Productos por Precio
-            var productosCaros = context.Products.Where(p => p.Price > 1000).ToList();
+            // var productosCaros = context.Products.Where(p => p.Price > 1000).ToList();
 
-            foreach (var product in productosCaros)
-            {
-                Console.WriteLine($"{product.Name} cuesta ${product.Price}");
-            }
+            // foreach (var product in productosCaros)
+            // {
+            //     Console.WriteLine($"{product.Name} cuesta ${product.Price}");
+            // }
+
+            //3. Actualizar (Modificar un Registro Existente)
+            var producto = context.Products.FirstOrDefault(p => p.Name == "Laptop");
+            producto.Price = 11000.99m;
+
+            context.SaveChanges();
+
         };
 
     }
