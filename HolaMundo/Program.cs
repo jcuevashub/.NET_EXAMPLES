@@ -59,8 +59,16 @@ Console.WriteLine($"¿a es mayor que b? {a > b}"); */
 // }
 
 //Bucle: while
-int contador = 0;
-while (contador < 5) {
-    Console.WriteLine($"Contador: {contador}");
-    contador++;
+// int contador = 0;
+// while (contador < 5) {
+//     Console.WriteLine($"Contador: {contador}");
+//     contador++;
+// }
+
+//Bucle: foreach
+string[] frutas = ["Manzana", "Banana", "Naranja"];
+
+foreach (string fruta in frutas)
+{
+    Console.WriteLine(fruta);
 }
