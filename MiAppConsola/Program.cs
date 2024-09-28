@@ -168,9 +168,15 @@ class Program
             // }
 
             //3. Actualizar (Modificar un Registro Existente)
-            var producto = context.Products.FirstOrDefault(p => p.Name == "Laptop");
-            producto.Price = 11000.99m;
+            // var producto = context.Products.FirstOrDefault(p => p.Name == "Laptop");
+            // producto.Price = 11000.99m;
 
+            // context.SaveChanges();
+
+            //4. Eliminar (Borrar un Registro)
+            var producto = context.Products.FirstOrDefault(p => p.Name == "Laptop");
+
+            context.Products.Remove(producto);
             context.SaveChanges();
 
         };
