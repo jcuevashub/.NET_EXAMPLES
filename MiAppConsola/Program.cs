@@ -103,30 +103,53 @@
 // Manejo de Errores y Excepciones
 // Cuando trabajas con entradas del usuario o archivos, es fundamental manejar errores para evitar que la aplicación falle.
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        string ruta = "archivo4.txt";
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         string ruta = "archivo4.txt";
 
-        try
-        {
-            string contenido = File.ReadAllText(ruta);
-            Console.WriteLine(contenido);
-        }
-        catch (FileNotFoundException)
-        {
-            
-           Console.WriteLine("El archivo no fue encontrado.");
-        }
-        catch(Exception ex) 
-        {
-            Console.WriteLine($"Ocurrió un error: {ex.Message}");
-        }
-    }
-}
+//         try
+//         {
+//             string contenido = File.ReadAllText(ruta);
+//             Console.WriteLine(contenido);
+//         }
+//         catch (FileNotFoundException)
+//         {
+
+//            Console.WriteLine("El archivo no fue encontrado.");
+//         }
+//         catch(Exception ex) 
+//         {
+//             Console.WriteLine($"Ocurrió un error: {ex.Message}");
+//         }
+//     }
+// }
 
 // En este ejemplo:
 
 // FileNotFoundException captura el error específico de archivo no encontrado.
 // Exception captura cualquier otro tipo de error general.
+
+//1. Crear (Insertar un Nuevo Registro)
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        using (var context = new AppDbContext())
+        {
+            
+            var producto = new Product
+            {
+                Name = "Laptop",
+                Price = 12000.99m
+            };
+
+            context.Products.Add(producto);
+            context.SaveChanges();
+        };
+
+
+    }
+}
