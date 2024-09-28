@@ -140,20 +140,31 @@ class Program
         using (var context = new AppDbContext())
         {
             //1. Crear (Insertar un Nuevo Registro)
-            // var producto = new Product
+            // for (int i = 0; i > 10; i++)
             // {
-            //     Name = "Laptop",
-            //     Price = 12000.99m
-            // };
+            //     var producto = new Product
+            //     {
+            //         Name = $"Laptop: {i}",
+            //         Price = 12000.99m
+            //     };
 
-            // context.Products.Add(producto);
-            // context.SaveChanges();
+            //     context.Products.Add(producto);
+            //     context.SaveChanges();
+            // }
 
             //2. Leer (Consultar Registros)
-            var productos = context.Products.ToList();
+            // var productos = context.Products.ToList();
 
-            foreach(var product in productos) {
-                Console.WriteLine($"{product.Id} - {product.Name} - ${product.Price}");
+            // foreach(var product in productos) {
+            //     Console.WriteLine($"{product.Id} - {product.Name} - ${product.Price}");
+            // }
+
+            //Filtrar Productos por Precio
+            var productosCaros = context.Products.Where(p => p.Price > 1000).ToList();
+
+            foreach (var product in productosCaros)
+            {
+                Console.WriteLine($"{product.Name} cuesta ${product.Price}");
             }
         };
 
