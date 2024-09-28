@@ -27,10 +27,26 @@ Console.WriteLine($"¿a es mayor que b? {a > b}"); */
 
 //Estructuras de Control en C#
 //Las estructuras de control en C# te permiten controlar el flujo de ejecución en tu programa.
-int edad = 18;
+// int edad = 18;
 
-if(edad >= 18) {
-    Console.WriteLine("Eres mayor de edad.");
-} else {
-    Console.WriteLine("Eres menor de edad.");
+// if(edad >= 18) {
+//     Console.WriteLine("Eres mayor de edad.");
+// } else {
+//     Console.WriteLine("Eres menor de edad.");
+// }
+
+//Switch-case
+//El Swith es útil cuando tiens múltiples condiciones
+int opcion = 2;
+switch (opcion)
+{
+    case 1:
+        Console.WriteLine("Opción 1 seleccionada.");
+        break;
+    case 2:
+        Console.WriteLine("Opción 2 seleccionada.");
+        break;
+    default:
+        Console.WriteLine("Opción no válida.");
+        break;
 }
