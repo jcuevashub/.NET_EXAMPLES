@@ -37,16 +37,23 @@ Console.WriteLine($"¿a es mayor que b? {a > b}"); */
 
 //Switch-case
 //El Swith es útil cuando tiens múltiples condiciones
-int opcion = 2;
-switch (opcion)
-{
-    case 1:
-        Console.WriteLine("Opción 1 seleccionada.");
-        break;
-    case 2:
-        Console.WriteLine("Opción 2 seleccionada.");
-        break;
-    default:
-        Console.WriteLine("Opción no válida.");
-        break;
+// int opcion = 2;
+// switch (opcion)
+// {
+//     case 1:
+//         Console.WriteLine("Opción 1 seleccionada.");
+//         break;
+//     case 2:
+//         Console.WriteLine("Opción 2 seleccionada.");
+//         break;
+//     default:
+//         Console.WriteLine("Opción no válida.");
+//         break;
+// }
+
+//Bucles: for, while y foreach
+//Los bucles permiten ejecutar un bloque de código varias veces.
+
+for(int i = 0; i < 10;i++){
+    Console.WriteLine($"Iteración {i}");
 }
