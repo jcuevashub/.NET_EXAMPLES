@@ -30,31 +30,55 @@
 // Herencia: Permite que una clase herede de otra.
 // Polimorfismo: Los métodos pueden comportarse de manera diferente según el contexto.
 
-class Animal 
-{
-    public string Nombre { get; set; }
+// class Animal 
+// {
+//     public string Nombre { get; set; }
 
-    public void Commer()
-    {
-        Console.WriteLine($"{Nombre} está comiendo.");
-    }
-}
+//     public void Commer()
+//     {
+//         Console.WriteLine($"{Nombre} está comiendo.");
+//     }
+// }
 
-class Perro : Animal
-{
-    public void Ladrar()
-    {
-        Console.WriteLine($"{Nombre} está ladrando.");
-    }
-}
+// class Perro : Animal
+// {
+//     public void Ladrar()
+//     {
+//         Console.WriteLine($"{Nombre} está ladrando.");
+//     }
+// }
+
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         Perro perro = new Perro();
+//         perro.Nombre = "Max";
+//         perro.Commer();
+//         perro.Ladrar();
+//     }
+// }
+
+//Manejo de Excepciones en C#
+//El manejo de excepciones permite captuarr errores en tiempo de ejecución para evitar que el programa se cierre de manera abrupta.
 
 class Program
 {
     static void Main(string[] args)
     {
-        Perro perro = new Perro();
-        perro.Nombre = "Max";
-        perro.Commer();
-        perro.Ladrar();
+        try
+        {
+            int[] numeros = { 1, 2, 3, };
+            Console.WriteLine(numeros[5]);
+        }
+        catch (System.Exception)
+        {
+
+            Console.WriteLine("Error: Intentaste acceder a un indice fuera del rango.");
+        }
+        finally
+        {
+            Console.WriteLine("Este bloque se ejecuta siempre.");
+        }
     }
 }
