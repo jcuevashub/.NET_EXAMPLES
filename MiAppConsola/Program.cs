@@ -49,20 +49,34 @@
 // En muchas aplicaciones de consola, es común interactuar con archivos. Puedes leer y escribir archivos utilizando clases como File y StreamReader/StreamWriter.
 
 //Lectura de Archivos
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         string ruta = "archivo.txt";
+
+//         if(File.Exists(ruta))
+//         {
+//             string contenido = File.ReadAllText(ruta);
+//             Console.WriteLine($"Contenido del archivo: {contenido}");
+//         }
+//          else
+//          {
+//             Console.WriteLine("El archivo no existe.");
+//          }
+//     }
+// }
+
+//Escritura en Archivos
+
 class Program
 {
     static void Main(string[] args)
     {
-        string ruta = "archivo.txt";
+        string ruta = "archivo2.txt";
+        string contenido = "Este es el contenido del archivo.";
 
-        if(File.Exists(ruta))
-        {
-            string contenido = File.ReadAllText(ruta);
-            Console.WriteLine($"Contenido del archivo: {contenido}");
-        }
-         else
-         {
-            Console.WriteLine("El archivo no existe.");
-         }
+        File.WriteAllText(ruta, contenido);
+        Console.WriteLine("El archivo ha sido creado y escrito.");
     }
 }
