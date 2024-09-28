@@ -139,17 +139,23 @@ class Program
     {
         using (var context = new AppDbContext())
         {
-            
-            var producto = new Product
-            {
-                Name = "Laptop",
-                Price = 12000.99m
-            };
+            //1. Crear (Insertar un Nuevo Registro)
+            // var producto = new Product
+            // {
+            //     Name = "Laptop",
+            //     Price = 12000.99m
+            // };
 
-            context.Products.Add(producto);
-            context.SaveChanges();
+            // context.Products.Add(producto);
+            // context.SaveChanges();
+
+            //2. Leer (Consultar Registros)
+            var productos = context.Products.ToList();
+
+            foreach(var product in productos) {
+                Console.WriteLine($"{product.Id} - {product.Name} - ${product.Price}");
+            }
         };
-
 
     }
 }
