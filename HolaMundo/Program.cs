@@ -54,6 +54,13 @@ Console.WriteLine($"¿a es mayor que b? {a > b}"); */
 //Bucles: for, while y foreach
 //Los bucles permiten ejecutar un bloque de código varias veces.
 
-for(int i = 0; i < 10;i++){
-    Console.WriteLine($"Iteración {i}");
+// for(int i = 0; i < 10;i++){
+//     Console.WriteLine($"Iteración {i}");
+// }
+
+//Bucle: while
+int contador = 0;
+while (contador < 5) {
+    Console.WriteLine($"Contador: {contador}");
+    contador++;
 }
