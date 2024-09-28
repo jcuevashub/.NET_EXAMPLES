@@ -69,14 +69,33 @@
 
 //Escritura en Archivos
 
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         string ruta = "archivo2.txt";
+//         string contenido = "Este es el contenido del archivo.";
+
+//         File.WriteAllText(ruta, contenido);
+//         Console.WriteLine("El archivo ha sido creado y escrito.");
+//     }
+// }
+
+// Manejo de Archivos con StreamReader y StreamWriter
+// Para manejar archivos grandes o realizar operaciones avanzadas, StreamReader y StreamWriter permiten leer y escribir en un flujo de datos.
+
+// Ejemplo: Leer un Archivo Línea por Línea
 class Program
 {
     static void Main(string[] args)
     {
-        string ruta = "archivo2.txt";
-        string contenido = "Este es el contenido del archivo.";
-
-        File.WriteAllText(ruta, contenido);
-        Console.WriteLine("El archivo ha sido creado y escrito.");
+        using (StreamReader sr = new StreamReader("archivo.txt"))
+        {
+            string linea;
+            while ((linea = sr.ReadLine()) != null)
+            {
+                Console.WriteLine(linea);
+            }
+        }
     }
 }
