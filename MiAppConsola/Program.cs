@@ -85,17 +85,48 @@
 // Para manejar archivos grandes o realizar operaciones avanzadas, StreamReader y StreamWriter permiten leer y escribir en un flujo de datos.
 
 // Ejemplo: Leer un Archivo Línea por Línea
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         using (StreamReader sr = new StreamReader("archivo.txt"))
+//         {
+//             string linea;
+//             while ((linea = sr.ReadLine()) != null)
+//             {
+//                 Console.WriteLine(linea);
+//             }
+//         }
+//     }
+// }
+
+// Manejo de Errores y Excepciones
+// Cuando trabajas con entradas del usuario o archivos, es fundamental manejar errores para evitar que la aplicación falle.
+
 class Program
 {
     static void Main(string[] args)
     {
-        using (StreamReader sr = new StreamReader("archivo.txt"))
+        string ruta = "archivo4.txt";
+
+        try
         {
-            string linea;
-            while ((linea = sr.ReadLine()) != null)
-            {
-                Console.WriteLine(linea);
-            }
+            string contenido = File.ReadAllText(ruta);
+            Console.WriteLine(contenido);
+        }
+        catch (FileNotFoundException)
+        {
+            
+           Console.WriteLine("El archivo no fue encontrado.");
+        }
+        catch(Exception ex) 
+        {
+            Console.WriteLine($"Ocurrió un error: {ex.Message}");
         }
     }
 }
+
+// En este ejemplo:
+
+// FileNotFoundException captura el error específico de archivo no encontrado.
+// Exception captura cualquier otro tipo de error general.
