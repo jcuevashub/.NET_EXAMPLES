@@ -69,4 +69,12 @@ public class ProductsController : ControllerBase
 
     }
 
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetProduct(int id)
+    {
+        var product = await products.FirstOrDefaultAsync(x => x.id == id);
+        if (product == null) return NotFound();
+        return Ok(product);
+    }
+
 }
