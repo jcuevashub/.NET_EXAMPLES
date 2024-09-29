@@ -31,6 +31,7 @@ public class ProductsController : ControllerBase
         return product;
     }
 
+    [Authorize]
     [HttpPost]
     public ActionResult<Product> Post(Product product)
     {
