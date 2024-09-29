@@ -8,5 +8,5 @@ using Microsoft.AspNetCore.Mvc;
 [Route("api/[controller]")]
 public class ErrorController : ControllerBase
 {
-    public IActionResult Error() => View();
+    public IActionResult Error() => null;
 }
